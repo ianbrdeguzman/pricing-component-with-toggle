@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+$very-light-grayish-blue: hsl(240, 78%, 98%);
+$light-grayish-blue: hsl(234, 14%, 74%);
+$grayish-blue: hsl(233, 13%, 49%);
+$dark-grayish-blue: hsl(232, 13%, 33%);
+$light-blue: hsl(237, 63%, 64%);
+$very-light-blue: hsl(236, 72%, 79%);
+$white: hsl(0, 0, 100%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: $grayish-blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50vw -5vh, 0 300vh;
+    background-color: $very-light-grayish-blue;
+}
+header {
+    margin: 4rem auto 3rem auto;
+    text-align: center;
+    div {
+        margin: 2rem 0 0 0;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        p:first-child {
+            color: $light-grayish-blue;
+            margin-right: 3rem;
+        }
+        p:last-child {
+            color: $light-grayish-blue;
+            margin-left: 3rem;
+        }
+        #toggle {
+            cursor: pointer;
+            position: relative;
+        }
+        #toggle::before {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 30px;
+            position: absolute;
+            top: -45%;
+            left: -35%;
+            transform: translate(-30%, -10%);
+            border-radius: 3rem;
+            background: linear-gradient(
+                to right,
+                $very-light-blue,
+                $light-blue
+            );
+        }
+        #toggle::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            position: absolute;
+            top: -50%;
+            left: -120%;
+            background: $white;
+            transition: all 0.3s ease;
+        }
+        #toggle:checked:after {
+            left: 20%;
+        }
+    }
+}
+.pricing-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .pricing {
+        width: 90vw;
+        max-width: 350px;
+        padding: 2rem;
+        margin: 1rem 0;
+        text-align: center;
+        background-color: $white;
+        border-radius: 0.5rem;
+        div {
+            color: $dark-grayish-blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h3 {
+                font-size: 2rem;
+                margin-right: 5px;
+            }
+            h2 {
+                font-size: 4rem;
+            }
+        }
+        ul {
+            margin: 2rem 0;
+            border-top: 1px solid $light-grayish-blue;
+            border-bottom: 1px solid $light-grayish-blue;
+            list-style: none;
+            li {
+                padding: 1rem 0;
+            }
+            li:nth-child(2) {
+                border-top: 1px solid $light-grayish-blue;
+                border-bottom: 1px solid $light-grayish-blue;
+            }
+        }
+        button {
+            width: 100%;
+            padding: 0.8rem 0;
+            font-family: inherit;
+            color: $white;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 0.5rem;
+            border: none;
+            outline: none;
+            border: 1px solid transparent;
+            background: linear-gradient(
+                to right,
+                $very-light-blue,
+                $light-blue
+            );
+        }
+        button:hover {
+            color: $light-blue;
+            border: 1px solid $light-blue;
+            background: transparent;
+        }
+    }
+    .pricing:nth-child(2) {
+        color: $white;
+        background: linear-gradient(to bottom, $very-light-blue, $light-blue);
+        div {
+            color: $white;
+        }
+        button {
+            color: $light-blue;
+            border: 1px solid $light-blue;
+            background: $white;
+        }
+        button:hover {
+            color: $white;
+            border: 1px solid $white;
+            background: $light-blue;
+        }
+    }
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background-image: url(../images/bg-top.svg),
+            url(../images/bg-bottom.svg);
+        background-repeat: no-repeat;
+        background-size: 25%;
+        background-position: 75vw -2vh, 0 65vh;
+        background-color: $very-light-grayish-blue;
+    }
+    .pricing-container {
+        padding: 0 2rem;
+        flex-direction: row;
+        justify-content: center;
+        .pricing:nth-child(2) {
+            padding: 3rem 2rem;
+            z-index: 1;
+        }
+    }
+}

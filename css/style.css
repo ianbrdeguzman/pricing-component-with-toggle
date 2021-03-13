@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #6d708d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50vw -5vh, 0 300vh;
+  background-color: #f6f6fe;
+}
+
+header {
+  margin: 4rem auto 3rem auto;
+  text-align: center;
+}
+
+header div {
+  margin: 2rem 0 0 0;
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header div p:first-child {
+  color: #b3b5c6;
+  margin-right: 3rem;
+}
+
+header div p:last-child {
+  color: #b3b5c6;
+  margin-left: 3rem;
+}
+
+header div #toggle {
+  cursor: pointer;
+  position: relative;
+}
+
+header div #toggle::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  top: -45%;
+  left: -35%;
+  -webkit-transform: translate(-30%, -10%);
+          transform: translate(-30%, -10%);
+  border-radius: 3rem;
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+}
+
+header div #toggle::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  background: white;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header div #toggle:checked:after {
+  left: 20%;
+}
+
+.pricing-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pricing-container .pricing {
+  width: 90vw;
+  max-width: 350px;
+  padding: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.pricing-container .pricing div {
+  color: #494c5f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pricing-container .pricing div h3 {
+  font-size: 2rem;
+  margin-right: 5px;
+}
+
+.pricing-container .pricing div h2 {
+  font-size: 4rem;
+}
+
+.pricing-container .pricing ul {
+  margin: 2rem 0;
+  border-top: 1px solid #b3b5c6;
+  border-bottom: 1px solid #b3b5c6;
+  list-style: none;
+}
+
+.pricing-container .pricing ul li {
+  padding: 1rem 0;
+}
+
+.pricing-container .pricing ul li:nth-child(2) {
+  border-top: 1px solid #b3b5c6;
+  border-bottom: 1px solid #b3b5c6;
+}
+
+.pricing-container .pricing button {
+  width: 100%;
+  padding: 0.8rem 0;
+  font-family: inherit;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  border: 1px solid transparent;
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+}
+
+.pricing-container .pricing button:hover {
+  color: #696fdd;
+  border: 1px solid #696fdd;
+  background: transparent;
+}
+
+.pricing-container .pricing:nth-child(2) {
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to bottom, #a3a8f0, #696fdd);
+}
+
+.pricing-container .pricing:nth-child(2) div {
+  color: white;
+}
+
+.pricing-container .pricing:nth-child(2) button {
+  color: #696fdd;
+  border: 1px solid #696fdd;
+  background: white;
+}
+
+.pricing-container .pricing:nth-child(2) button:hover {
+  color: white;
+  border: 1px solid white;
+  background: #696fdd;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: 75vw -2vh, 0 65vh;
+    background-color: #f6f6fe;
+  }
+  .pricing-container {
+    padding: 0 2rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .pricing-container .pricing:nth-child(2) {
+    padding: 3rem 2rem;
+    z-index: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */
